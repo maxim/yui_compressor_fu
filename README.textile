@@ -19,11 +19,9 @@ I didn't like anything else. asset_packager makes me list all files, bundle_fu d
 
 h3. LICENSE
 
-h4. YUI Compressor
+*YUI Compressor is made by Yahoo! and is issued under BSD license. Look into LICENSE file in vendor directory for more info.*
 
-YUI Compressor is made by Yahoo! and is issued under BSD license. Look into LICENSE file in vendor directory for more info.
-
-h4. yui_compressor_fu
+h4. Following is the MIT license for everything outside of vendor directory.
 
 Copyright (c) 2008 Maxim Chernyak
  
