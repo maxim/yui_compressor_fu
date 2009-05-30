@@ -26,4 +26,17 @@ class CompressorTest < Test::Unit::TestCase
     actual_css = YuiCompressorFu::Compressor.new.compress(File.join(File.dirname(__FILE__), 'samples', 'sample.css'))
     assert_equal expected_css, actual_css
   end
+  
+  should "compress into output file" do
+    expected_css = File.read(File.join(File.dirname(__FILE__), 'samples', 'compressed.css'))
+    actual_css_path = File.join(File.dirname(__FILE__), 'samples', 'actual.css')
+    begin
+      YuiCompressorFu::Compressor.new.compress(File.join(File.dirname(__FILE__), 'samples', 'sample.css'), actual_css_path)
+      assert File.exists?(actual_css_path)
+      actual_css = File.read(actual_css_path)
+      assert_equal expected_css, actual_css
+    ensure
+      File.delete(actual_css_path) if File.exists?(actual_css_path)
+    end
+  end
 end
